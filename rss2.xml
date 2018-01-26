@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Hugo&#39; Blog</title>
+    <link>https://hugolew.github.io/</link>
+    <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
+    
+    <description>a perfect circle</description>
+    <pubDate>Fri, 26 Jan 2018 15:55:24 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>nginx 常用</title>
+      <link>https://hugolew.github.io/2018/01/26/nginx/</link>
+      <guid>https://hugolew.github.io/2018/01/26/nginx/</guid>
+      <pubDate>Fri, 26 Jan 2018 22:41:36 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;CentOS-7-使用yum进行安装&quot;&gt;&lt;a href=&quot;#CentOS-7-使用yum进行安装&quot; class=&quot;headerlink&quot; title=&quot;CentOS 7 (使用yum进行安装)&quot;&gt;&lt;/a&gt;CentOS 7 (使用yum进行安装)&lt;/h2&gt;&lt;p&gt;建议先替换CentOS 7&lt;a href=&quot;http://mirrors.aliyun.com/help/centos&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;阿里镜像地址&lt;/a&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#添加CentOS 7阿里镜像地址&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;或者&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#安装Nginx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo yum install -y nginx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#启动Nginx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo systemctl start nginx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#CentOS 7 开机启动Nginx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo systemctl enable nginx&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;常用配置&quot;&gt;&lt;a href=&quot;#常用配置&quot; class=&quot;headerlink&quot; title=&quot;常用配置&quot;&gt;&lt;/a&gt;常用配置&lt;/h2&gt;
+      
+      </description>
+      
+      <comments>https://hugolew.github.io/2018/01/26/nginx/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Let&#39;s Encrypt给网站免费加上https</title>
+      <link>https://hugolew.github.io/2018/01/26/Let-sEncrypt/</link>
+      <guid>https://hugolew.github.io/2018/01/26/Let-sEncrypt/</guid>
+      <pubDate>Fri, 26 Jan 2018 21:57:19 GMT</pubDate>
+      <description>
+      
+        &lt;h1 id=&quot;推荐，acme-sh&quot;&gt;&lt;a href=&quot;#推荐，acme-sh&quot; class=&quot;headerlink&quot; title=&quot;推荐，acme.sh&quot;&gt;&lt;/a&gt;推荐，&lt;a href=&quot;https://github.com/Neilpang/acme.sh&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;acme.sh&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;acme.sh&lt;/strong&gt; 实现了 &lt;code&gt;acme&lt;/code&gt; 协议, 可以从 letsencrypt 生成免费的证书.&lt;/p&gt;
+&lt;p&gt;主要步骤:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;安装 &lt;strong&gt;acme.sh&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;生成证书&lt;/li&gt;
+&lt;li&gt;copy 证书到 nginx/apache 或者其他服务&lt;/li&gt;
+&lt;li&gt;更新证书&lt;/li&gt;
+&lt;li&gt;更新 &lt;strong&gt;acme.sh&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;出错怎么办, 如何调试&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;下面详细介绍.&lt;/p&gt;
+      
+      </description>
+      
+      <comments>https://hugolew.github.io/2018/01/26/Let-sEncrypt/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>docker 入门</title>
+      <link>https://hugolew.github.io/2017/12/30/docker/</link>
+      <guid>https://hugolew.github.io/2017/12/30/docker/</guid>
+      <pubDate>Sat, 30 Dec 2017 21:19:04 GMT</pubDate>
+      <description>
+      
+        &lt;h1 id=&quot;docker&quot;&gt;&lt;a href=&quot;#docker&quot; class=&quot;headerlink&quot; title=&quot;docker&quot;&gt;&lt;/a&gt;docker&lt;/h1&gt;&lt;h2 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; class=&quot;headerlink&quot; title=&quot;常用命令&quot;&gt;&lt;/a&gt;常用命令&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;杀死所有正在运行的容器&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;docker kill $(docker ps -a -q)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;停止所有正在运行的容器&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;docker stop $(docker ps -a -q)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;删除所有已经停止的容器&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;docker rm $(docker ps -a -q)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;删除所有未打 dangling 标签的镜像&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;docker rmi $(docker images -q -f dangling=true)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;删除所有镜像&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;docker rmi $(docker images -q)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;强制删除镜像名称中包含“doss-api”的镜像&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;docker rmi --force $(docker images | grep doss-api | awk &amp;apos;&amp;#123;print $3&amp;#125;&amp;apos;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.docker.com/engine/installation/linux/centos/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://docs.docker.com/engine/installation/linux/centos/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+      
+      </description>
+      
+      <comments>https://hugolew.github.io/2017/12/30/docker/#disqus_thread</comments>
+    </item>
+    
+  </channel>
+</rss>
